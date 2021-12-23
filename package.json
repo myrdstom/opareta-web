@@ -3,6 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@emotion/react": "^11.7.1",
+    "@emotion/styled": "^11.6.0",
+    "@material-ui/core": "^4.12.3",
+    "@mui/material": "^5.2.5",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^12.0.0",
     "@testing-library/user-event": "^13.2.1",
@@ -19,7 +23,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --testPathPattern src/__tests__/unit --env=jsdom --coverage jest --silent",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -38,6 +42,26 @@
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@types/material-ui": "^0.21.12"
+  },
+  "jest": {
+    "coverageThreshold": {
+      "global": {
+        "branches": 50,
+        "functions": 50,
+        "lines": 50,
+        "statements": 75
+      }
+    },
+    "coveragePathIgnorePatterns": [
+      "/src/App.tsx",
+      "/src/index.tsx",
+      "/src/pages",
+      "/src/reportWebVitals.js",
+      "./src/__tests__/__fixtures__/*"
     ]
   }
 }
